@@ -50,6 +50,7 @@ public class GetJokeAsyncTask extends AsyncTask<Pair<Context, String> , Void, St
     protected void onPostExecute(String s) {
         Intent i = new Intent(mContext, MyJokeActivity.class);
         i.putExtra(Constants.SEND_JOKE, mJoke);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         mContext.startActivity(i);
     }
 }
